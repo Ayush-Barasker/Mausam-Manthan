@@ -33,7 +33,7 @@ You can view and interact with the live version of *Mausam Manthan* by clicking 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📫 **Contact**
-For any questions or feedback, feel free to reach out to me at [your-email@example.com](mailto:your-email@example.com).
+For any questions or feedback, feel free to reach out to me at [ayushbarasker.official@gmail.com](mailto:ayushbarasker.official@gmail.com).
 
 ---
 
