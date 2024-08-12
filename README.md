@@ -1,4 +1,3 @@
-# Mausam-Manthan
 # Mausam Manthan 🌦️
 
 **Mausam Manthan** is a sleek and responsive weather app that provides real-time weather updates for any location. It uses the OpenWeatherMap API to deliver accurate forecasts with a stylish and intuitive interface. Perfect for checking the weather before heading out or planning your day!
@@ -15,21 +14,10 @@
 - **JavaScript**: For interactive elements and API integration.
 - **OpenWeatherMap API**: For fetching real-time weather data.
 
-## 🚀 **Getting Started**
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/your-username/mausam-manthan.git
-    ```
-2. **Navigate to the project directory**:
-    ```bash
-    cd mausam-manthan
-    ```
-3. **Open `index.html` in your browser** to view the app.
+## 🌍 **Try Here**
+You can view and interact with the live version of *Mausam Manthan* by clicking the link below:
 
-## 🌍 **How to Use**
-1. Enter the name of a city in the search box.
-2. Click the search button or press **Enter** to get the weather update.
-3. View the current temperature, humidity, and wind speed along with a weather icon.
+[**Try Mausam Manthan**](https://ayush-barasker.github.io/Mausam-Manthan/)
 
 ## 📸 **Screenshots**
 ![Screenshot of Mausam Manthan](path/to/screenshot.png)
@@ -50,4 +38,3 @@ For any questions or feedback, feel free to reach out to me at [your-email@examp
 ---
 
 Happy coding! 🚀
-
