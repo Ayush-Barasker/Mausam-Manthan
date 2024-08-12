@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mausam Manthan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Main Card Container -->
+    <div class="card">
+        
+        <!-- Title Section -->
+        <h1 class="title">Check the Weather</h1>
+        
+        <!-- Search Input Section -->
+        <div class="search">
+            <input type="text" placeholder="Enter Location" spellcheck="false">
+            <button><img src="images/search.png" alt="Search Button"></button>
+        </div>
+        
+        <!-- Error Message (Initially Hidden) -->
+        <div class="error">
+            <p>Wrong input</p>
+        </div>
+        
+        <!-- Weather Information Section -->
+        <div class="weather">
+            <!-- Weather Icon -->
+            <img src="images/rain.png" alt="weather icon" class="weather-icon">
+            
+            <!-- Temperature Display -->
+            <h1 class="temp">20°C</h1>
+            
+            <!-- City Name Display -->
+            <h2 class="city">New York</h2>
+            
+            <!-- Additional Weather Details -->
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="humidity icon">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="wind icon">
+                    <div>
+                        <p class="wind">15 KM/H</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Section -->
+    <script>
+        // API Configuration
+        const apiKey = "233f62775ddede163b465e132b122e31";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+
+const searchBox = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button");
+const weatherIcon = document.querySelector(".weather-icon");
+
+async function checkWeather(city) {
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    if (response.status === 404) {
+        document.querySelector(".error").style.display = "block";
+        document.querySelector(".weather").style.display = "none";
+    } else {
+        const data = await response.json();
+
+        document.querySelector(".city").textContent = data.name;
+        document.querySelector(".temp").textContent = Math.round(data.main.temp) + "°C";
+        document.querySelector(".humidity").textContent = data.main.humidity + "%";
+        document.querySelector(".wind").textContent = data.wind.speed + " km/hr";
+
+        switch (data.weather[0].main) {
+            case "Clouds":
+                weatherIcon.src = "images/clouds.png";
+                break;
+            case "Clear":
+                weatherIcon.src = "images/clear.png";
+                break;
+            case "Rain":
+                weatherIcon.src = "images/rain.png";
+                break;
+            case "Drizzle":
+                weatherIcon.src = "images/drizzle.png";
+                break;
+            case "Mist":
+                weatherIcon.src = "images/mist.png";
+                break;
+            default:
+                weatherIcon.src = "images/default.png";
+                break;
+        }
+
+        document.querySelector(".weather").style.display = "block";
+        document.querySelector(".error").style.display = "none";
+    }
+}
+
+// Event listener for the search button click
+searchBtn.addEventListener("click", () => {
+    checkWeather(searchBox.value);
+});
+
+// Event listener for the "Enter" key
+searchBox.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        checkWeather(searchBox.value);
+    }
+});
+
+
+checkWeather();
+    </script>
+</body>
+
+</html>
