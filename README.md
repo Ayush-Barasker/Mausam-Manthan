@@ -1,6 +1,6 @@
 # Mausam Manthan 🌦️
 
-**Mausam Manthan** is a sleek and responsive weather app that provides real-time weather updates for any location. It uses the OpenWeatherMap API to deliver accurate forecasts with a stylish and intuitive interface. Perfect for checking the weather before heading out or planning your day!
+**Mausam Manthan** is a sleek and responsive weather application that provides real-time weather updates for any location. It uses the OpenWeatherMap API to deliver accurate forecasts with a stylish and intuitive interface. Perfect for checking the weather before heading out or planning your day!
 
 ## 📜 **Features**
 - **Real-time weather updates**: Get current weather information for any city.
